@@ -14,7 +14,7 @@ let tasks = [
     new Task('wash the dishes', 'done'),
     new Task('finish math homework', 'done'),
     new Task('practice my trumpet', 'done')];
-            
+
 function drawCard(index, task){
     return `<div id="task-${index}" class="card">
         <div class="task-menu">
@@ -107,6 +107,10 @@ function editTask(id){
     document.getElementById('task-description').value = task.description;
     document.getElementById('task-status').value = task.status;
     document.getElementById('add-task').innerHTML = 'Update';
+}
+
+function sortTasksAlphabetically() {
+    tasks.sort((a, b) => a.description.localeCompare(b.description));
 }
 
 drawAllCards();
